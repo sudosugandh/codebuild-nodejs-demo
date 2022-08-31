@@ -1,8 +1,11 @@
-var test = require(uni.js);
-var str = 'hello, world!';
+const express = require('express')
+const app = express()
+const port = 3000
 
-test.string(str).startWith('hello');
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-if (test.string(str).startWith('hello')){
-    console.log("Passed");
-}
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
