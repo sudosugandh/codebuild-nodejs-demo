@@ -1,11 +1,9 @@
-const express = require('express')
-const app = express()
-const port = 3000
+var expect  = require('chai').expect;
+var request = require('request');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+it('Main page content', function(done) {
+    request('http://localhost:8080' , function(error, response, body) {
+        expect(body).to.equal('Hello World');
+        done();
+    });
+});
