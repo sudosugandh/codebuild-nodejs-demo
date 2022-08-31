@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - echo Installing Mocha...
-      - npm install express --save
       - npm install -g mocha
   pre_build:
     commands:
