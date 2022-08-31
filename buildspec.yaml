@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install: 
+    commands:
+      - echo Installing Mocha
+      - echo install -g mocha
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install unit.js
+  build: 
+    commands:
+      - echo Build started on `date`
+      - echo Compiling ths Node.js code
+      - mocha demo.js
+  post_build:
+     commands:
+       - echo Build completed on `date`
+
+artifacts:
+  files:
+    - demo.js
